@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextPhone</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NextPhone</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>NextPhone 📱</h1>
-    <main>
-        <section id="productos" class="grid"></section>
-    </main>
-    <script src="script.js"></script>
+  <aside class="sidebar">
+    <h2>📱 <span>NextPhone</span></h2>
+    <nav>
+      <a href="#">Explore</a>
+      <a href="#">Saved</a>
+      <a href="#">Cart</a>
+      <a href="#">Profile</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="filters">
+      <h3>Filter by Category</h3>
+      <div id="categoryFilters" class="filter-group"></div>
+
+      <h3>Filter by Brand</h3>
+      <div id="brandFilters" class="filter-group"></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header>
+      <input type="text" placeholder="Search Product..." />
+    </header>
+
+    <section id="productContainer" class="grid">
+      <!-- Productos renderizados por JS -->
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
