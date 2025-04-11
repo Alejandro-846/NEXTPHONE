@@ -182,3 +182,13 @@ cartBackdrop.addEventListener('click', () => {
   cartPanel.classList.remove('visible');
   cartBackdrop.classList.remove('visible');
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sidebar = document.querySelector('.sidebar');
+  const toggleBtn = document.getElementById('toggleSidebar');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+});

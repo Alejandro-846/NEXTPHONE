@@ -2,13 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NextPhone</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Sidebar -->
   <aside class="sidebar">
-    <h2>📱 <span style="color:#007bff">NextPhone</span></h2>
+    <button id="closeSidebar" class="close-btn">✖</button>
+    <h2>🛍️<span style="color:#007bff">NovaStore</span></h2>
     <nav>
       <a href="#">Explore</a>
       <a href="#">Saved</a>
@@ -25,12 +28,10 @@
     </div>
   </aside>
 
-  <button id="toggleSidebar" class="hamburger-btn">
-    ☰
-  </button>
-
+  <!-- Contenido principal -->
   <main class="main-content">
-    <header>
+    <header class="top-bar">
+      <button id="toggleSidebar" class="hamburger-btn">☰</button>
       <input type="text" placeholder="Buscar productos..." />
     </header>
 
@@ -54,17 +55,23 @@
   <!-- Script principal -->
   <script src="script.js"></script>
 
-  <!-- Script para el botón del sidebar -->
+  <!-- Control de sidebar -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
       const sidebar = document.querySelector('.sidebar');
       const toggleBtn = document.getElementById('toggleSidebar');
+      const closeBtn = document.getElementById('closeSidebar');
 
       toggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
+        sidebar.classList.add('open');
+        toggleBtn.classList.add('hidden');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        toggleBtn.classList.remove('hidden');
       });
     });
   </script>
 </body>
 </html>
- <wbr></wbr>
