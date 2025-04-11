@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,26 +8,30 @@
 </head>
 <body>
   <aside class="sidebar">
-    <h2>📱 <span>NextPhone</span></h2>
+    <h2>📱 <span style="color:#007bff">NextPhone</span></h2>
     <nav>
       <a href="#">Explore</a>
       <a href="#">Saved</a>
-      <a href="#">Cart</a>
       <a href="#">Profile</a>
       <a href="#">Contact</a>
     </nav>
+
     <div class="filters">
-      <h3>Filter by Category</h3>
+      <h3>Filtrar por categoría</h3>
       <div id="categoryFilters" class="filter-group"></div>
 
-      <h3>Filter by Brand</h3>
+      <h3>Filtrar por marca</h3>
       <div id="brandFilters" class="filter-group"></div>
     </div>
   </aside>
 
+  <button id="toggleSidebar" class="hamburger-btn">
+    ☰
+  </button>
+
   <main class="main-content">
     <header>
-      <input type="text" placeholder="Search Product..." />
+      <input type="text" placeholder="Buscar productos..." />
     </header>
 
     <section id="productContainer" class="grid">
@@ -35,6 +39,32 @@
     </section>
   </main>
 
+  <!-- Botón flotante del carrito -->
+  <button class="floating-cart-btn" onclick="toggleCart()">🛒</button>
+
+  <!-- Panel lateral del carrito -->
+  <aside id="cartPanel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h2>🛒 Tu carrito</h2>
+      <button onclick="toggleCart()">✖</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+  </aside>
+
+  <!-- Script principal -->
   <script src="script.js"></script>
+
+  <!-- Script para el botón del sidebar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebar = document.querySelector('.sidebar');
+      const toggleBtn = document.getElementById('toggleSidebar');
+
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
+ <wbr></wbr>
